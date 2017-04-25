@@ -1,0 +1,520 @@
+﻿/* GENERAL STYLES */
+body{	
+	margin:0;
+	padding:0;
+	background-color:#fff;
+	color:#000;
+	}
+
+#container{
+	min-width:770px;
+	width:expression(document.body.clientWidth < 770? "770px": "auto" );}	
+	
+#header{
+	background: transparent url(../../images/header-right.png) 100% 0 no-repeat;
+	margin:0;
+	padding:0;
+	position:relative;}
+
+#header h1{
+	position:absolute;
+	left:-999em;
+	top:-999em;
+	margin:0;
+	font-size:1.7em}
+	
+#header span, #header p{
+	position: absolute;
+	top: -999em;
+	left: -999em}
+
+#content{
+	padding:0;
+	clear:both}
+	
+html body #content{margin:0}
+	
+#content-inner{
+	height:1%
+	}
+	
+/*#map-container{
+	clear:both;
+	padding:40px 20px 20px 20px}
+#map{
+	height:30em;
+	border:1px solid #ccc}*/
+
+#latest-issues{
+	padding:0 20px}
+	
+#latest-issues p{
+	padding:4px 8px}
+	
+#latest-issues p.date{
+	background-color:#1C3F93;
+	color:#fff;
+	margin:0;
+	font-weight:bold}
+	
+/*Tables*/
+table{
+	width:100%}
+	
+table th{
+	background-color:#008FDC;
+	color:#fff;
+	text-align:left}
+	
+table tr{
+	background-color:#d7e1e7;}	
+	
+table tr.odd{
+	background-color:#c6d5de}
+
+table td, table th{
+	padding:4px}
+
+/* START Widths for latest issues columns*/	
+#latest-issues #issue{
+	width:10%}
+	
+#latest-issues #issue-name{
+	width:50%}
+/* END Widths for latest issues columns*/
+#operational-status{
+	float:left;
+	width:65%;
+	margin:0 0 0 20px}
+
+#feeds{
+	float:right;
+	width:25%;
+	margin:0 20px 0 0 }
+
+#feeds ul{
+	list-style:none;
+	margin:0;
+	padding:0;}
+		
+#feeds ul li a:hover{
+	background-color:#1C3F93;
+	color:#fff}
+
+#feeds-mobile{
+	background: url(../../images/icon-mobile.png) 8px 50% no-repeat;
+	padding:25px 5px 25px 50px;
+	}
+	
+#feeds-rss{
+	background: url(../../images/icon-rss.png) 0 50% no-repeat;
+	padding:15px 5px 15px 50px;
+	}
+
+
+/* Generic lists */
+
+ul.list{
+	list-style:none;
+	margin:0;
+	padding:0;}
+	
+ul.list li{
+	background: transparent url(../../images/bullet_orange.gif) 0 0 no-repeat;
+	padding-left:18px
+	}
+
+/* EDITOR PROPERTIES */
+
+
+
+/* GENERAL STYLES */
+ul#nav-primary
+{
+	list-style: none;
+	margin: 0 10px 0 0;
+	padding: 0;
+	float: right;
+}
+
+ul#nav-primary li
+{
+	float: left;
+	/*padding: 8px 8px 8px 20px;*/
+	padding: 4px 30px 4px 20px;
+	background: transparent url(../../images/links_li_bg.gif) 0 10px no-repeat;
+}
+
+ul#nav-primary li a
+{
+	display: block;
+	text-transform: uppercase;
+}
+
+ul#nav-primary li.current a
+{
+	font-weight: bold;
+}
+
+ul#nav-user
+{
+	float: right;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul#nav-user li
+{
+	float: left;
+	padding: 4px 30px 4px 20px;
+	background: transparent url(../../images/links_li_bg.gif) 0 10px no-repeat;
+}
+
+ul#nav-user li a
+{
+	display: block;
+	font-weight: bold;
+}
+
+ul#nav-footer
+{
+	list-style: none;
+	margin: 15px 0 0 0;
+	padding: 0;
+	float: left;
+}
+
+ul#nav-footer li
+{
+	float: left;
+	padding: 4px 15px;
+}
+
+ul#nav-footer li a
+{
+	color: #fff;
+	display: block;
+}
+
+
+
+ul#site-info
+{
+	float: right;
+	color: #fff;
+	text-align: right;
+	list-style: none;
+	padding: 0;
+	margin: 20px 0 0 0;
+}
+
+ul#site-info a
+{
+	color: #fff;
+}
+
+
+
+/* GENERAL STYLES */
+/*Tools*/
+
+.offleft
+{
+	position: absolute;
+	top: -999em;
+	left: -999em;
+}
+
+.clear
+{
+	clear: both;
+}
+
+img
+{
+	border: 0;
+}
+
+.right
+{
+	float: right;
+	margin: 0 0 10px 10px;
+}
+.left
+{
+	float: left;
+	margin: 0 10px 10px 0;
+}
+.margin-zero
+{
+	margin: 0;
+}
+
+/* CSS for the box starts here */
+.box
+{
+	padding: 0 12px 0 0;
+	background: #fff url(../../images/borders.png) 100% 0 repeat-y;
+}
+.bi
+{
+	padding: 0 0 0 12px;
+	background: #fff url(../../images/borders.png) 0 0 repeat-y;
+}
+.bt
+{
+	height: 17px;
+	margin: 0 -12px;
+	background: url(../../images/box.png) 100% 0 no-repeat;
+}
+.bt div
+{
+	width: 18px;
+	height: 17px;
+	background: url(../../images/box.png) 0 0 no-repeat;
+}
+.bb
+{
+	height: 17px;
+	margin: 0 -12px;
+	background: url(../../images/box.png) 100% 100% no-repeat;
+}
+.bb div
+{
+	width: 18px;
+	height: 17px;
+	background: url(../../images/box.png) 0 100% no-repeat;
+}
+.box h3
+{
+	margin: 0;
+	padding: 0.3em 10px;
+	background: #fff;
+}
+.box p, .box ul
+{
+	margin: 0;
+	padding: 4px 10px;
+	background: #fff;
+}
+.box li
+{
+	margin: 0 0 0 2em;
+	padding: 0;
+}
+
+
+
+/* EDITOR PROPERTIES */
+
+
+
+
+/* GENERAL STYLES */
+#tsy-header{
+	background: transparent url(../../images/page_header_bg.jpg) 0 0 repeat-x;
+	height:87px}
+
+a#logo{
+	background: transparent url(../../images/tsy_logo_large_transparent.gif) 0 0 no-repeat;
+	display:block;
+	margin:8px 0 0 8px;
+	padding:30px}
+	
+a#logo span{
+	position:absolute;
+	left:-999em;
+	top:-999em}
+	
+ul.tsy-nav{
+	font-size:0.8em;
+	font-weight:bold;
+	list-style:none;
+	margin:0;
+	padding:0;
+	position:absolute;
+	}
+	
+ul.tsy-nav.primary{
+	top:13px;
+	right:117px}	
+ul.tsy-nav.secondary{
+	padding:7px 0 7px 7px;
+	background: transparent url(../../images/links_bg.gif) 0 0 no-repeat;
+	top:6px;
+	right:6px}
+
+ul.tsy-nav li{
+	background: transparent url(../../images/links_li_bg.gif) 0 4px no-repeat;
+	padding:1px 2px 1px 20px}
+	
+ul.tsy-nav li a{
+	color:#212F6C}
+	
+ul.tsy-nav li a:hover{
+	background-color:#212F6C;
+	color:#fff;
+	text-decoration:none} 
+	
+#footer{
+	background: #817FC0 url(../../images/footer_colours.gif) 0 0 repeat-x;
+	height:8em
+	} 
+	
+#footer a:hover{background-color: #1C3F93}
+
+ul.fdtablePaginater * {
+display:inline !important;
+}
+
+fdtablePaginater a {
+width:10px;
+}
+
+
+/* EDITOR PROPERTIES */
+
+
+/* GENERAL STYLES */
+body
+{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+}
+
+/* LINKS */
+a, a:link a:active
+{
+	color: #212F6C;
+	background-color: transparent;
+	text-decoration: none;
+}
+a:visited
+{
+	color: #212F6C;
+	background-color: transparent;
+}
+a:hover
+{
+	color: #fff;
+	background-color: #212F6C;
+	text-decoration: none;
+}
+/* END LINKS */
+
+/* HEADINGS */
+h1, h2, h3, h4, h5
+{
+	color: #1B3F94;
+	line-height: 1.2em;
+	margin: 0 0 0.5em 0;
+}
+
+/* END HEADINGS */
+
+/* TEXT */
+p
+{
+	font-size: 1em;
+	margin: 0 0 1.5em 0;
+	padding: 0;
+	line-height: 1.4em;
+	background-color: transparent;
+}
+
+span
+{
+	font-size: 1em;
+	margin: 0 0 1.5em 0;
+	padding: 0;
+	line-height: 1.4em;
+}
+
+ul
+{
+	font-size: 1em;
+}
+
+/* END TEXT */
+
+/* EDITOR PROPERTIES */
+
+
+
+.popupBackground 
+{
+	background-color:Gray;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+}
+.HelpCollapsed
+{
+	cursor: pointer;
+	color: #969696;
+	margin-bottom: 5px;
+	margin-top: -10px;
+	font-size: 9pt;
+}
+.HelpCollapsed img
+{
+	position: relative;
+	top: 8px;
+}
+.HelpExpanded
+{
+	height:0px;
+	overflow:hidden;
+	color: #969696;
+	margin-left: 13px;
+}
+
+.Accordion
+{
+	border: 1px solid buttonface;
+}
+.AccordionHeader
+{
+	background-position: left top;
+	background-image: url(../../Common/Images/menu/AccHeaderBgd.gif);
+	background-repeat: repeat-x;
+	color: #FF6600;
+	text-decoration: underline;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 9pt;
+	padding: 3px;
+}
+.LargeIcon
+{
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 30px;
+}
+.AccordionContent
+{
+	font-size: 8pt;
+	border-bottom: 1px solid buttonface;
+	background-color: White;
+	padding: 3px;
+	padding-left: 10px;
+}
+.Wizard
+{
+	vertical-align: top;
+	padding: 10px;
+	border: 1px solid #FF6600;
+	background-color: White;
+}
+.WizardSideBar
+{
+	vertical-align: top;
+	background-color: #FEFDFD;
+	border-right: 1px solid #FF6600;
+}
+.SideBarSelected a
+{
+	color: #FF6600;
+	font-weight: bold;
+	text-decoration: none;
+}

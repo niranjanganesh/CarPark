@@ -1,0 +1,95 @@
+﻿body {
+}
+#dhtmltooltipCalender
+{
+	/*background-color: #ffffe0; /*#e2e2fc */
+	/*margin: 2em 0pt; */
+	/*border: dashed 2px Orange;*/
+	padding-bottom: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	position: absolute;
+	visibility: hidden;
+	z-index: 100;
+	text-align: center; /*WIDTH: 250px;*/
+	font-family:Arial ;
+	font-size:8pt;
+}
+.cal
+{
+	background-image:url(~/Common/images/calendar.gif);
+}
+
+.WeekHead
+{
+	background-color:#e9e9e9;/*#eeeeee;/*#ff3366*/ 
+	color:#d61c07;/*#e84109;/*#fa520a;*/
+	text-align: center; 
+	font-weight: bolder;
+	font-size:9pt;
+}
+
+.ParentCalender
+{
+    background-color: #ffffff; 
+    text-align: center;
+    font-weight:bold;
+    border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;
+    border-bottom-color:#313d46;
+    border-left-color:#313d46;
+    border-right-color:#313d46;
+    border-top-color:#313d46;
+    width : 200px;
+    height: 120px; 
+    font-size:8pt;
+}
+.Date
+{
+    cursor: pointer;
+    font-size:8pt;
+}
+
+.SeletedDate
+{
+    color: white; 
+    background-color: #fa520a; /*#c81700,#3333ff*/
+    font-size:8.5pt;
+    cursor: pointer;
+}
+
+.WeekEnd
+{
+    background-color:#ff9933;
+	color: black;
+	cursor: pointer;
+	font-size:8pt;
+}
+
+.WeekEndNull
+{
+    background-color:#ff9933;
+	color: black;
+	font-size:8pt;	
+}
+
+
+.RowClose
+{
+   background-color:#a9b7c2; /*#8397a7;/*#72889a ;*/
+	color: white;
+	font-size:4pt;	
+}
+
+.RowMonthAndYear
+{
+    background-color:#ffffff; 
+	color:#fa520a;/*#585858;/*#d61c07;/*#e84109;/*#fa520a;*/
+	font-size:10pt;
+}
+.SetWidth
+{
+ width: 140px;	
+}
+
+

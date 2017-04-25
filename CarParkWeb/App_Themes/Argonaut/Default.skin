@@ -1,0 +1,72 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:ImageButton runat="server" ImageUrl="~/Common/Images/OK.gif" SkinID="btnOK" ToolTip="Save"/>
+<asp:ImageButton runat="server" ImageUrl="~/Common/Images/OKLarge.gif" SkinID="btnLogin" ToolTip="Login" CssClass="MarginBottom"/>
+<asp:ImageButton runat="server" ImageUrl="~/Common/Images/Cancel.gif" SkinID="btnCancel" ToolTip="Cancel"/>
+<asp:ImageButton runat="server" ImageUrl="~/Common/Images/Delete.gif" SkinID="btnDelete" ToolTip="Delete"/>
+<asp:ImageButton runat="server" ImageUrl="~/Common/Images/OKLarge.gif" SkinID="btnOKLarge" ToolTip="Save" CssClass="MarginBottom"/>
+<asp:ImageButton runat="server" ImageUrl="~/Common/Images/OKLargeNEW.gif" SkinID="btnRestore" ToolTip="Restore" CssClass="MarginBottom"/>
+<asp:Image runat="server" ImageUrl="~/Common/Images/OKLarge.gif" SkinID="imgOKLarge" ToolTip="OK" CssClass="MarginBottom"/>
+<asp:ImageButton runat="server" ImageUrl="~/Common/Images/CancelLarge.gif" SkinID="btnCancelLarge" ToolTip="Cancel" CssClass="MarginBottom"/>
+<asp:Image runat="server" ImageUrl="~/Common/Images/CancelLarge.gif" SkinID="imgCancelLarge" ToolTip="Back" CssClass="MarginBottom"/>
+<asp:ImageButton runat="server" ImageUrl="~/Common/Images/DeleteLarge.gif" SkinID="btnDeleteLarge" ToolTip="Delete" CssClass="MarginBottom"/>
+
+<asp:Image runat="server" ImageUrl="~/Common/Images/Expand.gif" SkinID="imgExpand" ToolTip="Help"/>
+<asp:Image runat="server" ImageUrl="~/Common/Images/Collapse.gif" SkinID="imgCollapse" ToolTip="Help"/>
+
+<asp:GridView runat="server" SkinID="GridView" 
+                             AutoGenerateColumns="False" 
+                             GridLines="none" 
+                             AllowPaging="true" 
+                             AllowSorting="true" 
+                             CellPadding="5" 
+                             CellSpacing="0" 
+                             CssClass="Grid" 
+                             PageSize="20">
+    <HeaderStyle CssClass="GridHeader" />
+</asp:GridView> 
+
+<asp:GridView runat="server" SkinID="GridViewDefault" 
+                             AutoGenerateColumns="False" 
+                             GridLines="none" 
+                             AllowPaging="true" 
+                             AllowSorting="true" 
+                             CellPadding="5" 
+                             CellSpacing="0" 
+                             CssClass="Grid">
+    <HeaderStyle CssClass="GridHeader" />
+</asp:GridView>   
+<asp:GridView runat="server" SkinID="GridViewAutoGenerateColumnsFloatRight" 
+                             AutoGenerateColumns="True" 
+                             GridLines="none" 
+                             AllowPaging="false" 
+                             CellPadding="5" 
+                             CellSpacing="0" 
+                             CssClass="Grid FloatRight" >
+    <HeaderStyle CssClass="GridHeader" />
+</asp:GridView>   
+                         
+<asp:DetailsView runat="server" SkinID="DetailsView" 
+                                AutoGenerateRows="False" 
+                                CellPadding="5" 
+                                CellSpacing="0" 
+                                GridLines="none" 
+                                CssClass="Grid" 
+                                FieldHeaderStyle-Font-Bold="true" />
+
+<asp:TreeView runat="server" SkinID="TreeView" ShowLines="True">
+    <HoverNodeStyle Font-Bold="True"  />
+</asp:TreeView>

@@ -1,0 +1,3568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://soap.ukvoyager.info/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://soap.ukvoyager.info/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://soap.ukvoyager.info/">
+      <s:element name="List_Car_Park">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iFrom" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isGrid" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_Car_ParkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="List_Car_ParkResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_Car_Park_FromTo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iFrom" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iMax" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isGrid" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_Car_Park_FromToResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="List_Car_Park_FromToResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_Car_Park_for_Icon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_Car_Park_for_IconResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="List_Car_Park_for_IconResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="New_Car_Park">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShortDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LongDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TypeID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="QualityStatementID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataSource_TypeID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="unmappedSystemCodeNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Modal_Restrictions" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="New_Car_ParkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="New_Car_ParkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="New_Car_Park_Dynamic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Occupancy" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OccupancyPercentage" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="State_Typeid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="New_Car_Park_DynamicResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Edit_Car_Park">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShortDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LongDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TypeID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="QualityStatementID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataSource_TypeID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="existingSCN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Modal_Restrictions" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Edit_Car_ParkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Edit_Car_ParkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="New_Configuration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Capacity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DisabledCapacity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Almostfullincreasing" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Almostfulldecreasing" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fullincreasing" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fulldecreasing" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="New_ConfigurationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="New_ConfigurationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_DefinitionBySCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_DefinitionBySCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="View_DefinitionBySCNResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_Definition_Filter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ColumnName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_Definition_FilterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="View_Definition_FilterResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_Previous_DynamicBySCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_Previous_DynamicBySCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="View_Previous_DynamicBySCNResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_Definition">
+        <s:complexType />
+      </s:element>
+      <s:element name="View_DefinitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="View_DefinitionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="car_parksList_NearByObjects">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="easting" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="northing" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="radius" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="car_parksList_NearByObjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="car_parksList_NearByObjectsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_ConfigurationBySCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_ConfigurationBySCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="View_ConfigurationBySCNResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_DynamicBySCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_DynamicBySCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="View_DynamicBySCNResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_DynamicBySCN_Archive">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_DynamicBySCN_ArchiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="View_DynamicBySCN_ArchiveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_DynamicDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_DynamicDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="View_DynamicDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_DynamicRecords">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_DynamicRecordsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="View_DynamicRecordsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_DynamicRecords_Archive">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_DynamicRecords_ArchiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="View_DynamicRecords_ArchiveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_BySCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_BySCNResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="New_OpeningTimesBySCNDayID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DayID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DayIDTo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OpeningTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClosingTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_LastUpdate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="New_OpeningTimesBySCNDayIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="New_TariffsBySCNDayID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DayID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Period" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cost" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="New_TariffsBySCNDayIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Delete_OpeningTimesBySCNDayID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DayID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DayIDTo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClosingTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="OpeningTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_OpeningTimesBySCNDayIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DateRange_DefinitionBySCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DateRangeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DateRange_DefinitionBySCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DateRange_DefinitionBySCNResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_DateRange">
+        <s:complexType />
+      </s:element>
+      <s:element name="List_DateRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="List_DateRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_AllOpeningTimes_BySCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_AllOpeningTimes_BySCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="List_AllOpeningTimes_BySCNResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpeningTimes_BySCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpeningTimes_BySCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OpeningTimes_BySCNResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_Opening_Time">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteTimings">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_Opening_TimeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Insert_Opening_Time">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FromDayID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DayIDTo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDateTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteTimings">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_Opening_TimeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="List_OpeningTimesBySCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_OpeningTimesBySCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="List_OpeningTimesBySCNResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_TariffsBySCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_TariffsBySCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="List_TariffsBySCNResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Car_Park_Status">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Car_Park_StatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Car_Park_StatusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Edit_Car_ParkStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Status_TypeID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Edit_Car_ParkStatusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="View_OccupancyPercentage_Relaibility">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarPark_SCN" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="View_OccupancyPercentage_RelaibilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="View_OccupancyPercentage_RelaibilityResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_Carpark_Status">
+        <s:complexType />
+      </s:element>
+      <s:element name="List_Carpark_StatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="List_Carpark_StatusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpeningTime_ByDayType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastupDated" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpeningTime_ByDayTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OpeningTime_ByDayTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Check_Date_DateRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateRangeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Check_Date_DateRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Check_Date_DateRangeResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateRangeId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_DateRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DateRangeId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_DateRangeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Update_Opening_Time_DateRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateRangeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Opening_Time_DateRangeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="List_NewOpeningDateRangeID_Description">
+        <s:complexType />
+      </s:element>
+      <s:element name="List_NewOpeningDateRangeID_DescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="List_NewOpeningDateRangeID_DescriptionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="New_Opening_Time_DateRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCodeNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="New_Opening_Time_DateRangeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="New_Opening_Time_DayTypeID">
+        <s:complexType />
+      </s:element>
+      <s:element name="New_Opening_Time_DayTypeIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="List_NewOpening_dropDownSelection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DateRange" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_NewOpening_dropDownSelectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="List_NewOpening_dropDownSelectionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List_Default_NewOpening_dropDownSelection">
+        <s:complexType />
+      </s:element>
+      <s:element name="List_Default_NewOpening_dropDownSelectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="List_Default_NewOpening_dropDownSelectionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="int" type="s:int" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="List_Car_ParkSoapIn">
+    <wsdl:part name="parameters" element="tns:List_Car_Park" />
+  </wsdl:message>
+  <wsdl:message name="List_Car_ParkSoapOut">
+    <wsdl:part name="parameters" element="tns:List_Car_ParkResponse" />
+  </wsdl:message>
+  <wsdl:message name="List_Car_Park_FromToSoapIn">
+    <wsdl:part name="parameters" element="tns:List_Car_Park_FromTo" />
+  </wsdl:message>
+  <wsdl:message name="List_Car_Park_FromToSoapOut">
+    <wsdl:part name="parameters" element="tns:List_Car_Park_FromToResponse" />
+  </wsdl:message>
+  <wsdl:message name="List_Car_Park_for_IconSoapIn">
+    <wsdl:part name="parameters" element="tns:List_Car_Park_for_Icon" />
+  </wsdl:message>
+  <wsdl:message name="List_Car_Park_for_IconSoapOut">
+    <wsdl:part name="parameters" element="tns:List_Car_Park_for_IconResponse" />
+  </wsdl:message>
+  <wsdl:message name="New_Car_ParkSoapIn">
+    <wsdl:part name="parameters" element="tns:New_Car_Park" />
+  </wsdl:message>
+  <wsdl:message name="New_Car_ParkSoapOut">
+    <wsdl:part name="parameters" element="tns:New_Car_ParkResponse" />
+  </wsdl:message>
+  <wsdl:message name="New_Car_Park_DynamicSoapIn">
+    <wsdl:part name="parameters" element="tns:New_Car_Park_Dynamic" />
+  </wsdl:message>
+  <wsdl:message name="New_Car_Park_DynamicSoapOut">
+    <wsdl:part name="parameters" element="tns:New_Car_Park_DynamicResponse" />
+  </wsdl:message>
+  <wsdl:message name="Edit_Car_ParkSoapIn">
+    <wsdl:part name="parameters" element="tns:Edit_Car_Park" />
+  </wsdl:message>
+  <wsdl:message name="Edit_Car_ParkSoapOut">
+    <wsdl:part name="parameters" element="tns:Edit_Car_ParkResponse" />
+  </wsdl:message>
+  <wsdl:message name="New_ConfigurationSoapIn">
+    <wsdl:part name="parameters" element="tns:New_Configuration" />
+  </wsdl:message>
+  <wsdl:message name="New_ConfigurationSoapOut">
+    <wsdl:part name="parameters" element="tns:New_ConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="View_DefinitionBySCNSoapIn">
+    <wsdl:part name="parameters" element="tns:View_DefinitionBySCN" />
+  </wsdl:message>
+  <wsdl:message name="View_DefinitionBySCNSoapOut">
+    <wsdl:part name="parameters" element="tns:View_DefinitionBySCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="View_Definition_FilterSoapIn">
+    <wsdl:part name="parameters" element="tns:View_Definition_Filter" />
+  </wsdl:message>
+  <wsdl:message name="View_Definition_FilterSoapOut">
+    <wsdl:part name="parameters" element="tns:View_Definition_FilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="View_Previous_DynamicBySCNSoapIn">
+    <wsdl:part name="parameters" element="tns:View_Previous_DynamicBySCN" />
+  </wsdl:message>
+  <wsdl:message name="View_Previous_DynamicBySCNSoapOut">
+    <wsdl:part name="parameters" element="tns:View_Previous_DynamicBySCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="View_DefinitionSoapIn">
+    <wsdl:part name="parameters" element="tns:View_Definition" />
+  </wsdl:message>
+  <wsdl:message name="View_DefinitionSoapOut">
+    <wsdl:part name="parameters" element="tns:View_DefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="car_parksList_NearByObjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:car_parksList_NearByObjects" />
+  </wsdl:message>
+  <wsdl:message name="car_parksList_NearByObjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:car_parksList_NearByObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="View_ConfigurationBySCNSoapIn">
+    <wsdl:part name="parameters" element="tns:View_ConfigurationBySCN" />
+  </wsdl:message>
+  <wsdl:message name="View_ConfigurationBySCNSoapOut">
+    <wsdl:part name="parameters" element="tns:View_ConfigurationBySCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicBySCNSoapIn">
+    <wsdl:part name="parameters" element="tns:View_DynamicBySCN" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicBySCNSoapOut">
+    <wsdl:part name="parameters" element="tns:View_DynamicBySCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicBySCN_ArchiveSoapIn">
+    <wsdl:part name="parameters" element="tns:View_DynamicBySCN_Archive" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicBySCN_ArchiveSoapOut">
+    <wsdl:part name="parameters" element="tns:View_DynamicBySCN_ArchiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:View_DynamicDetails" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:View_DynamicDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicRecordsSoapIn">
+    <wsdl:part name="parameters" element="tns:View_DynamicRecords" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicRecordsSoapOut">
+    <wsdl:part name="parameters" element="tns:View_DynamicRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicRecords_ArchiveSoapIn">
+    <wsdl:part name="parameters" element="tns:View_DynamicRecords_Archive" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicRecords_ArchiveSoapOut">
+    <wsdl:part name="parameters" element="tns:View_DynamicRecords_ArchiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_BySCNSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_BySCN" />
+  </wsdl:message>
+  <wsdl:message name="Delete_BySCNSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_BySCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="New_OpeningTimesBySCNDayIDSoapIn">
+    <wsdl:part name="parameters" element="tns:New_OpeningTimesBySCNDayID" />
+  </wsdl:message>
+  <wsdl:message name="New_OpeningTimesBySCNDayIDSoapOut">
+    <wsdl:part name="parameters" element="tns:New_OpeningTimesBySCNDayIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="New_TariffsBySCNDayIDSoapIn">
+    <wsdl:part name="parameters" element="tns:New_TariffsBySCNDayID" />
+  </wsdl:message>
+  <wsdl:message name="New_TariffsBySCNDayIDSoapOut">
+    <wsdl:part name="parameters" element="tns:New_TariffsBySCNDayIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_OpeningTimesBySCNDayIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_OpeningTimesBySCNDayID" />
+  </wsdl:message>
+  <wsdl:message name="Delete_OpeningTimesBySCNDayIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_OpeningTimesBySCNDayIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DateRange_DefinitionBySCNSoapIn">
+    <wsdl:part name="parameters" element="tns:DateRange_DefinitionBySCN" />
+  </wsdl:message>
+  <wsdl:message name="DateRange_DefinitionBySCNSoapOut">
+    <wsdl:part name="parameters" element="tns:DateRange_DefinitionBySCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="List_DateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:List_DateRange" />
+  </wsdl:message>
+  <wsdl:message name="List_DateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:List_DateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="List_AllOpeningTimes_BySCNSoapIn">
+    <wsdl:part name="parameters" element="tns:List_AllOpeningTimes_BySCN" />
+  </wsdl:message>
+  <wsdl:message name="List_AllOpeningTimes_BySCNSoapOut">
+    <wsdl:part name="parameters" element="tns:List_AllOpeningTimes_BySCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="OpeningTimes_BySCNSoapIn">
+    <wsdl:part name="parameters" element="tns:OpeningTimes_BySCN" />
+  </wsdl:message>
+  <wsdl:message name="OpeningTimes_BySCNSoapOut">
+    <wsdl:part name="parameters" element="tns:OpeningTimes_BySCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_Opening_TimeSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_Opening_Time" />
+  </wsdl:message>
+  <wsdl:message name="Delete_Opening_TimeSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_Opening_TimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_Opening_TimeSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_Opening_Time" />
+  </wsdl:message>
+  <wsdl:message name="Insert_Opening_TimeSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_Opening_TimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="List_OpeningTimesBySCNSoapIn">
+    <wsdl:part name="parameters" element="tns:List_OpeningTimesBySCN" />
+  </wsdl:message>
+  <wsdl:message name="List_OpeningTimesBySCNSoapOut">
+    <wsdl:part name="parameters" element="tns:List_OpeningTimesBySCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="List_TariffsBySCNSoapIn">
+    <wsdl:part name="parameters" element="tns:List_TariffsBySCN" />
+  </wsdl:message>
+  <wsdl:message name="List_TariffsBySCNSoapOut">
+    <wsdl:part name="parameters" element="tns:List_TariffsBySCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Car_Park_StatusSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Car_Park_Status" />
+  </wsdl:message>
+  <wsdl:message name="Get_Car_Park_StatusSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Car_Park_StatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="Edit_Car_ParkStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:Edit_Car_ParkStatus" />
+  </wsdl:message>
+  <wsdl:message name="Edit_Car_ParkStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:Edit_Car_ParkStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="View_OccupancyPercentage_RelaibilitySoapIn">
+    <wsdl:part name="parameters" element="tns:View_OccupancyPercentage_Relaibility" />
+  </wsdl:message>
+  <wsdl:message name="View_OccupancyPercentage_RelaibilitySoapOut">
+    <wsdl:part name="parameters" element="tns:View_OccupancyPercentage_RelaibilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="List_Carpark_StatusSoapIn">
+    <wsdl:part name="parameters" element="tns:List_Carpark_Status" />
+  </wsdl:message>
+  <wsdl:message name="List_Carpark_StatusSoapOut">
+    <wsdl:part name="parameters" element="tns:List_Carpark_StatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="OpeningTime_ByDayTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:OpeningTime_ByDayType" />
+  </wsdl:message>
+  <wsdl:message name="OpeningTime_ByDayTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:OpeningTime_ByDayTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Check_Date_DateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:Check_Date_DateRange" />
+  </wsdl:message>
+  <wsdl:message name="Check_Date_DateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:Check_Date_DateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_DateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_DateRange" />
+  </wsdl:message>
+  <wsdl:message name="Delete_DateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_DateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_Opening_Time_DateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Opening_Time_DateRange" />
+  </wsdl:message>
+  <wsdl:message name="Update_Opening_Time_DateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_Opening_Time_DateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="List_NewOpeningDateRangeID_DescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:List_NewOpeningDateRangeID_Description" />
+  </wsdl:message>
+  <wsdl:message name="List_NewOpeningDateRangeID_DescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:List_NewOpeningDateRangeID_DescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="New_Opening_Time_DateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:New_Opening_Time_DateRange" />
+  </wsdl:message>
+  <wsdl:message name="New_Opening_Time_DateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:New_Opening_Time_DateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="New_Opening_Time_DayTypeIDSoapIn">
+    <wsdl:part name="parameters" element="tns:New_Opening_Time_DayTypeID" />
+  </wsdl:message>
+  <wsdl:message name="New_Opening_Time_DayTypeIDSoapOut">
+    <wsdl:part name="parameters" element="tns:New_Opening_Time_DayTypeIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="List_NewOpening_dropDownSelectionSoapIn">
+    <wsdl:part name="parameters" element="tns:List_NewOpening_dropDownSelection" />
+  </wsdl:message>
+  <wsdl:message name="List_NewOpening_dropDownSelectionSoapOut">
+    <wsdl:part name="parameters" element="tns:List_NewOpening_dropDownSelectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="List_Default_NewOpening_dropDownSelectionSoapIn">
+    <wsdl:part name="parameters" element="tns:List_Default_NewOpening_dropDownSelection" />
+  </wsdl:message>
+  <wsdl:message name="List_Default_NewOpening_dropDownSelectionSoapOut">
+    <wsdl:part name="parameters" element="tns:List_Default_NewOpening_dropDownSelectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="List_Car_ParkHttpGetIn">
+    <wsdl:part name="iFrom" type="s:string" />
+    <wsdl:part name="searchContent" type="s:string" />
+    <wsdl:part name="orderBy" type="s:string" />
+    <wsdl:part name="isGrid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="List_Car_ParkHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="List_Car_Park_for_IconHttpGetIn">
+    <wsdl:part name="searchContent" type="s:string" />
+    <wsdl:part name="orderBy" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="List_Car_Park_for_IconHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="New_Car_ParkHttpGetIn">
+    <wsdl:part name="ShortDescription" type="s:string" />
+    <wsdl:part name="LongDescription" type="s:string" />
+    <wsdl:part name="TypeID" type="s:string" />
+    <wsdl:part name="QualityStatementID" type="s:string" />
+    <wsdl:part name="DataSource_TypeID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="unmappedSystemCodeNumber" type="s:string" />
+    <wsdl:part name="Modal_Restrictions" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="New_Car_ParkHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="New_Car_Park_DynamicHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="Occupancy" type="s:string" />
+    <wsdl:part name="OccupancyPercentage" type="s:string" />
+    <wsdl:part name="State_Typeid" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="New_Car_Park_DynamicHttpGetOut" />
+  <wsdl:message name="Edit_Car_ParkHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="ShortDescription" type="s:string" />
+    <wsdl:part name="LongDescription" type="s:string" />
+    <wsdl:part name="TypeID" type="s:string" />
+    <wsdl:part name="QualityStatementID" type="s:string" />
+    <wsdl:part name="DataSource_TypeID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="existingSCN" type="s:string" />
+    <wsdl:part name="Modal_Restrictions" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Edit_Car_ParkHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="New_ConfigurationHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="Capacity" type="s:string" />
+    <wsdl:part name="DisabledCapacity" type="s:string" />
+    <wsdl:part name="Almostfullincreasing" type="s:string" />
+    <wsdl:part name="Almostfulldecreasing" type="s:string" />
+    <wsdl:part name="fullincreasing" type="s:string" />
+    <wsdl:part name="fulldecreasing" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="New_ConfigurationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DefinitionBySCNHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DefinitionBySCNHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_Definition_FilterHttpGetIn">
+    <wsdl:part name="ColumnName" type="s:string" />
+    <wsdl:part name="SearchText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_Definition_FilterHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_Previous_DynamicBySCNHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_Previous_DynamicBySCNHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_DefinitionHttpGetIn" />
+  <wsdl:message name="View_DefinitionHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="car_parksList_NearByObjectsHttpGetIn">
+    <wsdl:part name="easting" type="s:string" />
+    <wsdl:part name="northing" type="s:string" />
+    <wsdl:part name="radius" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="car_parksList_NearByObjectsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_ConfigurationBySCNHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_ConfigurationBySCNHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicBySCNHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicBySCNHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicBySCN_ArchiveHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicBySCN_ArchiveHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicDetailsHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicRecordsHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicRecordsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicRecords_ArchiveHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicRecords_ArchiveHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Delete_BySCNHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Delete_BySCNHttpGetOut" />
+  <wsdl:message name="New_OpeningTimesBySCNDayIDHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="DayID" type="s:string" />
+    <wsdl:part name="DayIDTo" type="s:string" />
+    <wsdl:part name="OpeningTime" type="s:string" />
+    <wsdl:part name="ClosingTime" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="_LastUpdate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="New_OpeningTimesBySCNDayIDHttpGetOut" />
+  <wsdl:message name="New_TariffsBySCNDayIDHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="DayID" type="s:string" />
+    <wsdl:part name="Period" type="s:string" />
+    <wsdl:part name="Cost" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="New_TariffsBySCNDayIDHttpGetOut" />
+  <wsdl:message name="Delete_OpeningTimesBySCNDayIDHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="DayID" type="s:string" />
+    <wsdl:part name="DayIDTo" type="s:string" />
+    <wsdl:part name="ClosingTime" type="s:string" />
+    <wsdl:part name="OpeningTime" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Delete_OpeningTimesBySCNDayIDHttpGetOut" />
+  <wsdl:message name="DateRange_DefinitionBySCNHttpGetIn">
+    <wsdl:part name="DateRangeID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DateRange_DefinitionBySCNHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="List_DateRangeHttpGetIn" />
+  <wsdl:message name="List_DateRangeHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="List_AllOpeningTimes_BySCNHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="List_AllOpeningTimes_BySCNHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="OpeningTimes_BySCNHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OpeningTimes_BySCNHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="List_OpeningTimesBySCNHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="List_OpeningTimesBySCNHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="List_TariffsBySCNHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="List_TariffsBySCNHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Get_Car_Park_StatusHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Get_Car_Park_StatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Edit_Car_ParkStatusHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="Status_TypeID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Edit_Car_ParkStatusHttpGetOut" />
+  <wsdl:message name="View_OccupancyPercentage_RelaibilityHttpGetIn">
+    <wsdl:part name="CarPark_SCN" type="s:string" />
+    <wsdl:part name="DateTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_OccupancyPercentage_RelaibilityHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="List_Carpark_StatusHttpGetIn" />
+  <wsdl:message name="List_Carpark_StatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="OpeningTime_ByDayTypeHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="LastupDated" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OpeningTime_ByDayTypeHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Delete_DateRangeHttpGetIn">
+    <wsdl:part name="DateRangeId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Delete_DateRangeHttpGetOut" />
+  <wsdl:message name="Update_Opening_Time_DateRangeHttpGetIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+    <wsdl:part name="DateRangeId" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Update_Opening_Time_DateRangeHttpGetOut" />
+  <wsdl:message name="List_NewOpeningDateRangeID_DescriptionHttpGetIn" />
+  <wsdl:message name="List_NewOpeningDateRangeID_DescriptionHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="New_Opening_Time_DateRangeHttpGetIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="New_Opening_Time_DateRangeHttpGetOut" />
+  <wsdl:message name="New_Opening_Time_DayTypeIDHttpGetIn" />
+  <wsdl:message name="New_Opening_Time_DayTypeIDHttpGetOut" />
+  <wsdl:message name="List_NewOpening_dropDownSelectionHttpGetIn">
+    <wsdl:part name="DateRange" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="List_NewOpening_dropDownSelectionHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="List_Default_NewOpening_dropDownSelectionHttpGetIn" />
+  <wsdl:message name="List_Default_NewOpening_dropDownSelectionHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="List_Car_ParkHttpPostIn">
+    <wsdl:part name="iFrom" type="s:string" />
+    <wsdl:part name="searchContent" type="s:string" />
+    <wsdl:part name="orderBy" type="s:string" />
+    <wsdl:part name="isGrid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="List_Car_ParkHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="List_Car_Park_for_IconHttpPostIn">
+    <wsdl:part name="searchContent" type="s:string" />
+    <wsdl:part name="orderBy" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="List_Car_Park_for_IconHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="New_Car_ParkHttpPostIn">
+    <wsdl:part name="ShortDescription" type="s:string" />
+    <wsdl:part name="LongDescription" type="s:string" />
+    <wsdl:part name="TypeID" type="s:string" />
+    <wsdl:part name="QualityStatementID" type="s:string" />
+    <wsdl:part name="DataSource_TypeID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="unmappedSystemCodeNumber" type="s:string" />
+    <wsdl:part name="Modal_Restrictions" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="New_Car_ParkHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="New_Car_Park_DynamicHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="Occupancy" type="s:string" />
+    <wsdl:part name="OccupancyPercentage" type="s:string" />
+    <wsdl:part name="State_Typeid" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="New_Car_Park_DynamicHttpPostOut" />
+  <wsdl:message name="Edit_Car_ParkHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="ShortDescription" type="s:string" />
+    <wsdl:part name="LongDescription" type="s:string" />
+    <wsdl:part name="TypeID" type="s:string" />
+    <wsdl:part name="QualityStatementID" type="s:string" />
+    <wsdl:part name="DataSource_TypeID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="existingSCN" type="s:string" />
+    <wsdl:part name="Modal_Restrictions" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Edit_Car_ParkHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="New_ConfigurationHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="Capacity" type="s:string" />
+    <wsdl:part name="DisabledCapacity" type="s:string" />
+    <wsdl:part name="Almostfullincreasing" type="s:string" />
+    <wsdl:part name="Almostfulldecreasing" type="s:string" />
+    <wsdl:part name="fullincreasing" type="s:string" />
+    <wsdl:part name="fulldecreasing" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="New_ConfigurationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DefinitionBySCNHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DefinitionBySCNHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_Definition_FilterHttpPostIn">
+    <wsdl:part name="ColumnName" type="s:string" />
+    <wsdl:part name="SearchText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_Definition_FilterHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_Previous_DynamicBySCNHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_Previous_DynamicBySCNHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_DefinitionHttpPostIn" />
+  <wsdl:message name="View_DefinitionHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="car_parksList_NearByObjectsHttpPostIn">
+    <wsdl:part name="easting" type="s:string" />
+    <wsdl:part name="northing" type="s:string" />
+    <wsdl:part name="radius" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="car_parksList_NearByObjectsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_ConfigurationBySCNHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_ConfigurationBySCNHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicBySCNHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicBySCNHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicBySCN_ArchiveHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicBySCN_ArchiveHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicDetailsHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicRecordsHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicRecordsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicRecords_ArchiveHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_DynamicRecords_ArchiveHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Delete_BySCNHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Delete_BySCNHttpPostOut" />
+  <wsdl:message name="New_OpeningTimesBySCNDayIDHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="DayID" type="s:string" />
+    <wsdl:part name="DayIDTo" type="s:string" />
+    <wsdl:part name="OpeningTime" type="s:string" />
+    <wsdl:part name="ClosingTime" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="_LastUpdate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="New_OpeningTimesBySCNDayIDHttpPostOut" />
+  <wsdl:message name="New_TariffsBySCNDayIDHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="DayID" type="s:string" />
+    <wsdl:part name="Period" type="s:string" />
+    <wsdl:part name="Cost" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="New_TariffsBySCNDayIDHttpPostOut" />
+  <wsdl:message name="Delete_OpeningTimesBySCNDayIDHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="DayID" type="s:string" />
+    <wsdl:part name="DayIDTo" type="s:string" />
+    <wsdl:part name="ClosingTime" type="s:string" />
+    <wsdl:part name="OpeningTime" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Delete_OpeningTimesBySCNDayIDHttpPostOut" />
+  <wsdl:message name="DateRange_DefinitionBySCNHttpPostIn">
+    <wsdl:part name="DateRangeID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DateRange_DefinitionBySCNHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="List_DateRangeHttpPostIn" />
+  <wsdl:message name="List_DateRangeHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="List_AllOpeningTimes_BySCNHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="List_AllOpeningTimes_BySCNHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="OpeningTimes_BySCNHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OpeningTimes_BySCNHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="List_OpeningTimesBySCNHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="List_OpeningTimesBySCNHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="List_TariffsBySCNHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="List_TariffsBySCNHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Get_Car_Park_StatusHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Get_Car_Park_StatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Edit_Car_ParkStatusHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="Status_TypeID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Edit_Car_ParkStatusHttpPostOut" />
+  <wsdl:message name="View_OccupancyPercentage_RelaibilityHttpPostIn">
+    <wsdl:part name="CarPark_SCN" type="s:string" />
+    <wsdl:part name="DateTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="View_OccupancyPercentage_RelaibilityHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="List_Carpark_StatusHttpPostIn" />
+  <wsdl:message name="List_Carpark_StatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="OpeningTime_ByDayTypeHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="LastupDated" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OpeningTime_ByDayTypeHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Delete_DateRangeHttpPostIn">
+    <wsdl:part name="DateRangeId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Delete_DateRangeHttpPostOut" />
+  <wsdl:message name="Update_Opening_Time_DateRangeHttpPostIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+    <wsdl:part name="DateRangeId" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Update_Opening_Time_DateRangeHttpPostOut" />
+  <wsdl:message name="List_NewOpeningDateRangeID_DescriptionHttpPostIn" />
+  <wsdl:message name="List_NewOpeningDateRangeID_DescriptionHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="New_Opening_Time_DateRangeHttpPostIn">
+    <wsdl:part name="SystemCodeNumber" type="s:string" />
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="New_Opening_Time_DateRangeHttpPostOut" />
+  <wsdl:message name="New_Opening_Time_DayTypeIDHttpPostIn" />
+  <wsdl:message name="New_Opening_Time_DayTypeIDHttpPostOut" />
+  <wsdl:message name="List_NewOpening_dropDownSelectionHttpPostIn">
+    <wsdl:part name="DateRange" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="List_NewOpening_dropDownSelectionHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="List_Default_NewOpening_dropDownSelectionHttpPostIn" />
+  <wsdl:message name="List_Default_NewOpening_dropDownSelectionHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:portType name="Car_ParkSoap">
+    <wsdl:operation name="List_Car_Park">
+      <wsdl:input message="tns:List_Car_ParkSoapIn" />
+      <wsdl:output message="tns:List_Car_ParkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_Car_Park_FromTo">
+      <wsdl:input message="tns:List_Car_Park_FromToSoapIn" />
+      <wsdl:output message="tns:List_Car_Park_FromToSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_Car_Park_for_Icon">
+      <wsdl:input message="tns:List_Car_Park_for_IconSoapIn" />
+      <wsdl:output message="tns:List_Car_Park_for_IconSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park">
+      <wsdl:input message="tns:New_Car_ParkSoapIn" />
+      <wsdl:output message="tns:New_Car_ParkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park_Dynamic">
+      <wsdl:input message="tns:New_Car_Park_DynamicSoapIn" />
+      <wsdl:output message="tns:New_Car_Park_DynamicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_Park">
+      <wsdl:input message="tns:Edit_Car_ParkSoapIn" />
+      <wsdl:output message="tns:Edit_Car_ParkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Configuration">
+      <wsdl:input message="tns:New_ConfigurationSoapIn" />
+      <wsdl:output message="tns:New_ConfigurationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DefinitionBySCN">
+      <wsdl:input message="tns:View_DefinitionBySCNSoapIn" />
+      <wsdl:output message="tns:View_DefinitionBySCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition_Filter">
+      <wsdl:input message="tns:View_Definition_FilterSoapIn" />
+      <wsdl:output message="tns:View_Definition_FilterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_Previous_DynamicBySCN">
+      <wsdl:input message="tns:View_Previous_DynamicBySCNSoapIn" />
+      <wsdl:output message="tns:View_Previous_DynamicBySCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition">
+      <wsdl:input message="tns:View_DefinitionSoapIn" />
+      <wsdl:output message="tns:View_DefinitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="car_parksList_NearByObjects">
+      <wsdl:input message="tns:car_parksList_NearByObjectsSoapIn" />
+      <wsdl:output message="tns:car_parksList_NearByObjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_ConfigurationBySCN">
+      <wsdl:input message="tns:View_ConfigurationBySCNSoapIn" />
+      <wsdl:output message="tns:View_ConfigurationBySCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN">
+      <wsdl:input message="tns:View_DynamicBySCNSoapIn" />
+      <wsdl:output message="tns:View_DynamicBySCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN_Archive">
+      <wsdl:input message="tns:View_DynamicBySCN_ArchiveSoapIn" />
+      <wsdl:output message="tns:View_DynamicBySCN_ArchiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicDetails">
+      <wsdl:input message="tns:View_DynamicDetailsSoapIn" />
+      <wsdl:output message="tns:View_DynamicDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords">
+      <wsdl:input message="tns:View_DynamicRecordsSoapIn" />
+      <wsdl:output message="tns:View_DynamicRecordsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords_Archive">
+      <wsdl:input message="tns:View_DynamicRecords_ArchiveSoapIn" />
+      <wsdl:output message="tns:View_DynamicRecords_ArchiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_BySCN">
+      <wsdl:input message="tns:Delete_BySCNSoapIn" />
+      <wsdl:output message="tns:Delete_BySCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_OpeningTimesBySCNDayID">
+      <wsdl:input message="tns:New_OpeningTimesBySCNDayIDSoapIn" />
+      <wsdl:output message="tns:New_OpeningTimesBySCNDayIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_TariffsBySCNDayID">
+      <wsdl:input message="tns:New_TariffsBySCNDayIDSoapIn" />
+      <wsdl:output message="tns:New_TariffsBySCNDayIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_OpeningTimesBySCNDayID">
+      <wsdl:input message="tns:Delete_OpeningTimesBySCNDayIDSoapIn" />
+      <wsdl:output message="tns:Delete_OpeningTimesBySCNDayIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DateRange_DefinitionBySCN">
+      <wsdl:input message="tns:DateRange_DefinitionBySCNSoapIn" />
+      <wsdl:output message="tns:DateRange_DefinitionBySCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_DateRange">
+      <wsdl:input message="tns:List_DateRangeSoapIn" />
+      <wsdl:output message="tns:List_DateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_AllOpeningTimes_BySCN">
+      <wsdl:input message="tns:List_AllOpeningTimes_BySCNSoapIn" />
+      <wsdl:output message="tns:List_AllOpeningTimes_BySCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTimes_BySCN">
+      <wsdl:input message="tns:OpeningTimes_BySCNSoapIn" />
+      <wsdl:output message="tns:OpeningTimes_BySCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Opening_Time">
+      <wsdl:input message="tns:Delete_Opening_TimeSoapIn" />
+      <wsdl:output message="tns:Delete_Opening_TimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Opening_Time">
+      <wsdl:input message="tns:Insert_Opening_TimeSoapIn" />
+      <wsdl:output message="tns:Insert_Opening_TimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_OpeningTimesBySCN">
+      <wsdl:input message="tns:List_OpeningTimesBySCNSoapIn" />
+      <wsdl:output message="tns:List_OpeningTimesBySCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_TariffsBySCN">
+      <wsdl:input message="tns:List_TariffsBySCNSoapIn" />
+      <wsdl:output message="tns:List_TariffsBySCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Car_Park_Status">
+      <wsdl:input message="tns:Get_Car_Park_StatusSoapIn" />
+      <wsdl:output message="tns:Get_Car_Park_StatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_ParkStatus">
+      <wsdl:input message="tns:Edit_Car_ParkStatusSoapIn" />
+      <wsdl:output message="tns:Edit_Car_ParkStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_OccupancyPercentage_Relaibility">
+      <wsdl:input message="tns:View_OccupancyPercentage_RelaibilitySoapIn" />
+      <wsdl:output message="tns:View_OccupancyPercentage_RelaibilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_Carpark_Status">
+      <wsdl:input message="tns:List_Carpark_StatusSoapIn" />
+      <wsdl:output message="tns:List_Carpark_StatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTime_ByDayType">
+      <wsdl:input message="tns:OpeningTime_ByDayTypeSoapIn" />
+      <wsdl:output message="tns:OpeningTime_ByDayTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Check_Date_DateRange">
+      <wsdl:input message="tns:Check_Date_DateRangeSoapIn" />
+      <wsdl:output message="tns:Check_Date_DateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_DateRange">
+      <wsdl:input message="tns:Delete_DateRangeSoapIn" />
+      <wsdl:output message="tns:Delete_DateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Opening_Time_DateRange">
+      <wsdl:input message="tns:Update_Opening_Time_DateRangeSoapIn" />
+      <wsdl:output message="tns:Update_Opening_Time_DateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpeningDateRangeID_Description">
+      <wsdl:input message="tns:List_NewOpeningDateRangeID_DescriptionSoapIn" />
+      <wsdl:output message="tns:List_NewOpeningDateRangeID_DescriptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DateRange">
+      <wsdl:input message="tns:New_Opening_Time_DateRangeSoapIn" />
+      <wsdl:output message="tns:New_Opening_Time_DateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DayTypeID">
+      <wsdl:input message="tns:New_Opening_Time_DayTypeIDSoapIn" />
+      <wsdl:output message="tns:New_Opening_Time_DayTypeIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpening_dropDownSelection">
+      <wsdl:input message="tns:List_NewOpening_dropDownSelectionSoapIn" />
+      <wsdl:output message="tns:List_NewOpening_dropDownSelectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_Default_NewOpening_dropDownSelection">
+      <wsdl:input message="tns:List_Default_NewOpening_dropDownSelectionSoapIn" />
+      <wsdl:output message="tns:List_Default_NewOpening_dropDownSelectionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Car_ParkHttpGet">
+    <wsdl:operation name="List_Car_Park">
+      <wsdl:input message="tns:List_Car_ParkHttpGetIn" />
+      <wsdl:output message="tns:List_Car_ParkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_Car_Park_for_Icon">
+      <wsdl:input message="tns:List_Car_Park_for_IconHttpGetIn" />
+      <wsdl:output message="tns:List_Car_Park_for_IconHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park">
+      <wsdl:input message="tns:New_Car_ParkHttpGetIn" />
+      <wsdl:output message="tns:New_Car_ParkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park_Dynamic">
+      <wsdl:input message="tns:New_Car_Park_DynamicHttpGetIn" />
+      <wsdl:output message="tns:New_Car_Park_DynamicHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_Park">
+      <wsdl:input message="tns:Edit_Car_ParkHttpGetIn" />
+      <wsdl:output message="tns:Edit_Car_ParkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Configuration">
+      <wsdl:input message="tns:New_ConfigurationHttpGetIn" />
+      <wsdl:output message="tns:New_ConfigurationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DefinitionBySCN">
+      <wsdl:input message="tns:View_DefinitionBySCNHttpGetIn" />
+      <wsdl:output message="tns:View_DefinitionBySCNHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition_Filter">
+      <wsdl:input message="tns:View_Definition_FilterHttpGetIn" />
+      <wsdl:output message="tns:View_Definition_FilterHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_Previous_DynamicBySCN">
+      <wsdl:input message="tns:View_Previous_DynamicBySCNHttpGetIn" />
+      <wsdl:output message="tns:View_Previous_DynamicBySCNHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition">
+      <wsdl:input message="tns:View_DefinitionHttpGetIn" />
+      <wsdl:output message="tns:View_DefinitionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="car_parksList_NearByObjects">
+      <wsdl:input message="tns:car_parksList_NearByObjectsHttpGetIn" />
+      <wsdl:output message="tns:car_parksList_NearByObjectsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_ConfigurationBySCN">
+      <wsdl:input message="tns:View_ConfigurationBySCNHttpGetIn" />
+      <wsdl:output message="tns:View_ConfigurationBySCNHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN">
+      <wsdl:input message="tns:View_DynamicBySCNHttpGetIn" />
+      <wsdl:output message="tns:View_DynamicBySCNHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN_Archive">
+      <wsdl:input message="tns:View_DynamicBySCN_ArchiveHttpGetIn" />
+      <wsdl:output message="tns:View_DynamicBySCN_ArchiveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicDetails">
+      <wsdl:input message="tns:View_DynamicDetailsHttpGetIn" />
+      <wsdl:output message="tns:View_DynamicDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords">
+      <wsdl:input message="tns:View_DynamicRecordsHttpGetIn" />
+      <wsdl:output message="tns:View_DynamicRecordsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords_Archive">
+      <wsdl:input message="tns:View_DynamicRecords_ArchiveHttpGetIn" />
+      <wsdl:output message="tns:View_DynamicRecords_ArchiveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_BySCN">
+      <wsdl:input message="tns:Delete_BySCNHttpGetIn" />
+      <wsdl:output message="tns:Delete_BySCNHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_OpeningTimesBySCNDayID">
+      <wsdl:input message="tns:New_OpeningTimesBySCNDayIDHttpGetIn" />
+      <wsdl:output message="tns:New_OpeningTimesBySCNDayIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_TariffsBySCNDayID">
+      <wsdl:input message="tns:New_TariffsBySCNDayIDHttpGetIn" />
+      <wsdl:output message="tns:New_TariffsBySCNDayIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_OpeningTimesBySCNDayID">
+      <wsdl:input message="tns:Delete_OpeningTimesBySCNDayIDHttpGetIn" />
+      <wsdl:output message="tns:Delete_OpeningTimesBySCNDayIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DateRange_DefinitionBySCN">
+      <wsdl:input message="tns:DateRange_DefinitionBySCNHttpGetIn" />
+      <wsdl:output message="tns:DateRange_DefinitionBySCNHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_DateRange">
+      <wsdl:input message="tns:List_DateRangeHttpGetIn" />
+      <wsdl:output message="tns:List_DateRangeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_AllOpeningTimes_BySCN">
+      <wsdl:input message="tns:List_AllOpeningTimes_BySCNHttpGetIn" />
+      <wsdl:output message="tns:List_AllOpeningTimes_BySCNHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTimes_BySCN">
+      <wsdl:input message="tns:OpeningTimes_BySCNHttpGetIn" />
+      <wsdl:output message="tns:OpeningTimes_BySCNHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_OpeningTimesBySCN">
+      <wsdl:input message="tns:List_OpeningTimesBySCNHttpGetIn" />
+      <wsdl:output message="tns:List_OpeningTimesBySCNHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_TariffsBySCN">
+      <wsdl:input message="tns:List_TariffsBySCNHttpGetIn" />
+      <wsdl:output message="tns:List_TariffsBySCNHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Car_Park_Status">
+      <wsdl:input message="tns:Get_Car_Park_StatusHttpGetIn" />
+      <wsdl:output message="tns:Get_Car_Park_StatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_ParkStatus">
+      <wsdl:input message="tns:Edit_Car_ParkStatusHttpGetIn" />
+      <wsdl:output message="tns:Edit_Car_ParkStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_OccupancyPercentage_Relaibility">
+      <wsdl:input message="tns:View_OccupancyPercentage_RelaibilityHttpGetIn" />
+      <wsdl:output message="tns:View_OccupancyPercentage_RelaibilityHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_Carpark_Status">
+      <wsdl:input message="tns:List_Carpark_StatusHttpGetIn" />
+      <wsdl:output message="tns:List_Carpark_StatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTime_ByDayType">
+      <wsdl:input message="tns:OpeningTime_ByDayTypeHttpGetIn" />
+      <wsdl:output message="tns:OpeningTime_ByDayTypeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_DateRange">
+      <wsdl:input message="tns:Delete_DateRangeHttpGetIn" />
+      <wsdl:output message="tns:Delete_DateRangeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Opening_Time_DateRange">
+      <wsdl:input message="tns:Update_Opening_Time_DateRangeHttpGetIn" />
+      <wsdl:output message="tns:Update_Opening_Time_DateRangeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpeningDateRangeID_Description">
+      <wsdl:input message="tns:List_NewOpeningDateRangeID_DescriptionHttpGetIn" />
+      <wsdl:output message="tns:List_NewOpeningDateRangeID_DescriptionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DateRange">
+      <wsdl:input message="tns:New_Opening_Time_DateRangeHttpGetIn" />
+      <wsdl:output message="tns:New_Opening_Time_DateRangeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DayTypeID">
+      <wsdl:input message="tns:New_Opening_Time_DayTypeIDHttpGetIn" />
+      <wsdl:output message="tns:New_Opening_Time_DayTypeIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpening_dropDownSelection">
+      <wsdl:input message="tns:List_NewOpening_dropDownSelectionHttpGetIn" />
+      <wsdl:output message="tns:List_NewOpening_dropDownSelectionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_Default_NewOpening_dropDownSelection">
+      <wsdl:input message="tns:List_Default_NewOpening_dropDownSelectionHttpGetIn" />
+      <wsdl:output message="tns:List_Default_NewOpening_dropDownSelectionHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Car_ParkHttpPost">
+    <wsdl:operation name="List_Car_Park">
+      <wsdl:input message="tns:List_Car_ParkHttpPostIn" />
+      <wsdl:output message="tns:List_Car_ParkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_Car_Park_for_Icon">
+      <wsdl:input message="tns:List_Car_Park_for_IconHttpPostIn" />
+      <wsdl:output message="tns:List_Car_Park_for_IconHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park">
+      <wsdl:input message="tns:New_Car_ParkHttpPostIn" />
+      <wsdl:output message="tns:New_Car_ParkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park_Dynamic">
+      <wsdl:input message="tns:New_Car_Park_DynamicHttpPostIn" />
+      <wsdl:output message="tns:New_Car_Park_DynamicHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_Park">
+      <wsdl:input message="tns:Edit_Car_ParkHttpPostIn" />
+      <wsdl:output message="tns:Edit_Car_ParkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Configuration">
+      <wsdl:input message="tns:New_ConfigurationHttpPostIn" />
+      <wsdl:output message="tns:New_ConfigurationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DefinitionBySCN">
+      <wsdl:input message="tns:View_DefinitionBySCNHttpPostIn" />
+      <wsdl:output message="tns:View_DefinitionBySCNHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition_Filter">
+      <wsdl:input message="tns:View_Definition_FilterHttpPostIn" />
+      <wsdl:output message="tns:View_Definition_FilterHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_Previous_DynamicBySCN">
+      <wsdl:input message="tns:View_Previous_DynamicBySCNHttpPostIn" />
+      <wsdl:output message="tns:View_Previous_DynamicBySCNHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition">
+      <wsdl:input message="tns:View_DefinitionHttpPostIn" />
+      <wsdl:output message="tns:View_DefinitionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="car_parksList_NearByObjects">
+      <wsdl:input message="tns:car_parksList_NearByObjectsHttpPostIn" />
+      <wsdl:output message="tns:car_parksList_NearByObjectsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_ConfigurationBySCN">
+      <wsdl:input message="tns:View_ConfigurationBySCNHttpPostIn" />
+      <wsdl:output message="tns:View_ConfigurationBySCNHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN">
+      <wsdl:input message="tns:View_DynamicBySCNHttpPostIn" />
+      <wsdl:output message="tns:View_DynamicBySCNHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN_Archive">
+      <wsdl:input message="tns:View_DynamicBySCN_ArchiveHttpPostIn" />
+      <wsdl:output message="tns:View_DynamicBySCN_ArchiveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicDetails">
+      <wsdl:input message="tns:View_DynamicDetailsHttpPostIn" />
+      <wsdl:output message="tns:View_DynamicDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords">
+      <wsdl:input message="tns:View_DynamicRecordsHttpPostIn" />
+      <wsdl:output message="tns:View_DynamicRecordsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords_Archive">
+      <wsdl:input message="tns:View_DynamicRecords_ArchiveHttpPostIn" />
+      <wsdl:output message="tns:View_DynamicRecords_ArchiveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_BySCN">
+      <wsdl:input message="tns:Delete_BySCNHttpPostIn" />
+      <wsdl:output message="tns:Delete_BySCNHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_OpeningTimesBySCNDayID">
+      <wsdl:input message="tns:New_OpeningTimesBySCNDayIDHttpPostIn" />
+      <wsdl:output message="tns:New_OpeningTimesBySCNDayIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_TariffsBySCNDayID">
+      <wsdl:input message="tns:New_TariffsBySCNDayIDHttpPostIn" />
+      <wsdl:output message="tns:New_TariffsBySCNDayIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_OpeningTimesBySCNDayID">
+      <wsdl:input message="tns:Delete_OpeningTimesBySCNDayIDHttpPostIn" />
+      <wsdl:output message="tns:Delete_OpeningTimesBySCNDayIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DateRange_DefinitionBySCN">
+      <wsdl:input message="tns:DateRange_DefinitionBySCNHttpPostIn" />
+      <wsdl:output message="tns:DateRange_DefinitionBySCNHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_DateRange">
+      <wsdl:input message="tns:List_DateRangeHttpPostIn" />
+      <wsdl:output message="tns:List_DateRangeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_AllOpeningTimes_BySCN">
+      <wsdl:input message="tns:List_AllOpeningTimes_BySCNHttpPostIn" />
+      <wsdl:output message="tns:List_AllOpeningTimes_BySCNHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTimes_BySCN">
+      <wsdl:input message="tns:OpeningTimes_BySCNHttpPostIn" />
+      <wsdl:output message="tns:OpeningTimes_BySCNHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_OpeningTimesBySCN">
+      <wsdl:input message="tns:List_OpeningTimesBySCNHttpPostIn" />
+      <wsdl:output message="tns:List_OpeningTimesBySCNHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_TariffsBySCN">
+      <wsdl:input message="tns:List_TariffsBySCNHttpPostIn" />
+      <wsdl:output message="tns:List_TariffsBySCNHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Car_Park_Status">
+      <wsdl:input message="tns:Get_Car_Park_StatusHttpPostIn" />
+      <wsdl:output message="tns:Get_Car_Park_StatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_ParkStatus">
+      <wsdl:input message="tns:Edit_Car_ParkStatusHttpPostIn" />
+      <wsdl:output message="tns:Edit_Car_ParkStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="View_OccupancyPercentage_Relaibility">
+      <wsdl:input message="tns:View_OccupancyPercentage_RelaibilityHttpPostIn" />
+      <wsdl:output message="tns:View_OccupancyPercentage_RelaibilityHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_Carpark_Status">
+      <wsdl:input message="tns:List_Carpark_StatusHttpPostIn" />
+      <wsdl:output message="tns:List_Carpark_StatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTime_ByDayType">
+      <wsdl:input message="tns:OpeningTime_ByDayTypeHttpPostIn" />
+      <wsdl:output message="tns:OpeningTime_ByDayTypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_DateRange">
+      <wsdl:input message="tns:Delete_DateRangeHttpPostIn" />
+      <wsdl:output message="tns:Delete_DateRangeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Opening_Time_DateRange">
+      <wsdl:input message="tns:Update_Opening_Time_DateRangeHttpPostIn" />
+      <wsdl:output message="tns:Update_Opening_Time_DateRangeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpeningDateRangeID_Description">
+      <wsdl:input message="tns:List_NewOpeningDateRangeID_DescriptionHttpPostIn" />
+      <wsdl:output message="tns:List_NewOpeningDateRangeID_DescriptionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DateRange">
+      <wsdl:input message="tns:New_Opening_Time_DateRangeHttpPostIn" />
+      <wsdl:output message="tns:New_Opening_Time_DateRangeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DayTypeID">
+      <wsdl:input message="tns:New_Opening_Time_DayTypeIDHttpPostIn" />
+      <wsdl:output message="tns:New_Opening_Time_DayTypeIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpening_dropDownSelection">
+      <wsdl:input message="tns:List_NewOpening_dropDownSelectionHttpPostIn" />
+      <wsdl:output message="tns:List_NewOpening_dropDownSelectionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List_Default_NewOpening_dropDownSelection">
+      <wsdl:input message="tns:List_Default_NewOpening_dropDownSelectionHttpPostIn" />
+      <wsdl:output message="tns:List_Default_NewOpening_dropDownSelectionHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Car_ParkSoap" type="tns:Car_ParkSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="List_Car_Park">
+      <soap:operation soapAction="http://soap.ukvoyager.info/List_Car_Park" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Car_Park_FromTo">
+      <soap:operation soapAction="http://soap.ukvoyager.info/List_Car_Park_FromTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Car_Park_for_Icon">
+      <soap:operation soapAction="http://soap.ukvoyager.info/List_Car_Park_for_Icon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park">
+      <soap:operation soapAction="http://soap.ukvoyager.info/New_Car_Park" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park_Dynamic">
+      <soap:operation soapAction="http://soap.ukvoyager.info/New_Car_Park_Dynamic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_Park">
+      <soap:operation soapAction="http://soap.ukvoyager.info/Edit_Car_Park" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Configuration">
+      <soap:operation soapAction="http://soap.ukvoyager.info/New_Configuration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DefinitionBySCN">
+      <soap:operation soapAction="http://soap.ukvoyager.info/View_DefinitionBySCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition_Filter">
+      <soap:operation soapAction="http://soap.ukvoyager.info/View_Definition_Filter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Previous_DynamicBySCN">
+      <soap:operation soapAction="http://soap.ukvoyager.info/View_Previous_DynamicBySCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition">
+      <soap:operation soapAction="http://soap.ukvoyager.info/View_Definition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="car_parksList_NearByObjects">
+      <soap:operation soapAction="http://soap.ukvoyager.info/car_parksList_NearByObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_ConfigurationBySCN">
+      <soap:operation soapAction="http://soap.ukvoyager.info/View_ConfigurationBySCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN">
+      <soap:operation soapAction="http://soap.ukvoyager.info/View_DynamicBySCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN_Archive">
+      <soap:operation soapAction="http://soap.ukvoyager.info/View_DynamicBySCN_Archive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicDetails">
+      <soap:operation soapAction="http://soap.ukvoyager.info/View_DynamicDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords">
+      <soap:operation soapAction="http://soap.ukvoyager.info/View_DynamicRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords_Archive">
+      <soap:operation soapAction="http://soap.ukvoyager.info/View_DynamicRecords_Archive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_BySCN">
+      <soap:operation soapAction="http://soap.ukvoyager.info/Delete_BySCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_OpeningTimesBySCNDayID">
+      <soap:operation soapAction="http://soap.ukvoyager.info/New_OpeningTimesBySCNDayID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_TariffsBySCNDayID">
+      <soap:operation soapAction="http://soap.ukvoyager.info/New_TariffsBySCNDayID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_OpeningTimesBySCNDayID">
+      <soap:operation soapAction="http://soap.ukvoyager.info/Delete_OpeningTimesBySCNDayID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DateRange_DefinitionBySCN">
+      <soap:operation soapAction="http://soap.ukvoyager.info/DateRange_DefinitionBySCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_DateRange">
+      <soap:operation soapAction="http://soap.ukvoyager.info/List_DateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_AllOpeningTimes_BySCN">
+      <soap:operation soapAction="http://soap.ukvoyager.info/List_AllOpeningTimes_BySCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTimes_BySCN">
+      <soap:operation soapAction="http://soap.ukvoyager.info/OpeningTimes_BySCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Opening_Time">
+      <soap:operation soapAction="http://soap.ukvoyager.info/Delete_Opening_Time" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Opening_Time">
+      <soap:operation soapAction="http://soap.ukvoyager.info/Insert_Opening_Time" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_OpeningTimesBySCN">
+      <soap:operation soapAction="http://soap.ukvoyager.info/List_OpeningTimesBySCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_TariffsBySCN">
+      <soap:operation soapAction="http://soap.ukvoyager.info/List_TariffsBySCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Car_Park_Status">
+      <soap:operation soapAction="http://soap.ukvoyager.info/Get_Car_Park_Status" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_ParkStatus">
+      <soap:operation soapAction="http://soap.ukvoyager.info/Edit_Car_ParkStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_OccupancyPercentage_Relaibility">
+      <soap:operation soapAction="http://soap.ukvoyager.info/View_OccupancyPercentage_Relaibility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Carpark_Status">
+      <soap:operation soapAction="http://soap.ukvoyager.info/List_Carpark_Status" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTime_ByDayType">
+      <soap:operation soapAction="http://soap.ukvoyager.info/OpeningTime_ByDayType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Date_DateRange">
+      <soap:operation soapAction="http://soap.ukvoyager.info/Check_Date_DateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_DateRange">
+      <soap:operation soapAction="http://soap.ukvoyager.info/Delete_DateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Opening_Time_DateRange">
+      <soap:operation soapAction="http://soap.ukvoyager.info/Update_Opening_Time_DateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpeningDateRangeID_Description">
+      <soap:operation soapAction="http://soap.ukvoyager.info/List_NewOpeningDateRangeID_Description" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DateRange">
+      <soap:operation soapAction="http://soap.ukvoyager.info/New_Opening_Time_DateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DayTypeID">
+      <soap:operation soapAction="http://soap.ukvoyager.info/New_Opening_Time_DayTypeID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpening_dropDownSelection">
+      <soap:operation soapAction="http://soap.ukvoyager.info/List_NewOpening_dropDownSelection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Default_NewOpening_dropDownSelection">
+      <soap:operation soapAction="http://soap.ukvoyager.info/List_Default_NewOpening_dropDownSelection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Car_ParkSoap12" type="tns:Car_ParkSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="List_Car_Park">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/List_Car_Park" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Car_Park_FromTo">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/List_Car_Park_FromTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Car_Park_for_Icon">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/List_Car_Park_for_Icon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/New_Car_Park" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park_Dynamic">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/New_Car_Park_Dynamic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_Park">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/Edit_Car_Park" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Configuration">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/New_Configuration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DefinitionBySCN">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/View_DefinitionBySCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition_Filter">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/View_Definition_Filter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Previous_DynamicBySCN">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/View_Previous_DynamicBySCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/View_Definition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="car_parksList_NearByObjects">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/car_parksList_NearByObjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_ConfigurationBySCN">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/View_ConfigurationBySCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/View_DynamicBySCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN_Archive">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/View_DynamicBySCN_Archive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicDetails">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/View_DynamicDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/View_DynamicRecords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords_Archive">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/View_DynamicRecords_Archive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_BySCN">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/Delete_BySCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_OpeningTimesBySCNDayID">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/New_OpeningTimesBySCNDayID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_TariffsBySCNDayID">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/New_TariffsBySCNDayID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_OpeningTimesBySCNDayID">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/Delete_OpeningTimesBySCNDayID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DateRange_DefinitionBySCN">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/DateRange_DefinitionBySCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_DateRange">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/List_DateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_AllOpeningTimes_BySCN">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/List_AllOpeningTimes_BySCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTimes_BySCN">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/OpeningTimes_BySCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Opening_Time">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/Delete_Opening_Time" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Opening_Time">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/Insert_Opening_Time" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_OpeningTimesBySCN">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/List_OpeningTimesBySCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_TariffsBySCN">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/List_TariffsBySCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Car_Park_Status">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/Get_Car_Park_Status" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_ParkStatus">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/Edit_Car_ParkStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_OccupancyPercentage_Relaibility">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/View_OccupancyPercentage_Relaibility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Carpark_Status">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/List_Carpark_Status" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTime_ByDayType">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/OpeningTime_ByDayType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Date_DateRange">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/Check_Date_DateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_DateRange">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/Delete_DateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Opening_Time_DateRange">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/Update_Opening_Time_DateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpeningDateRangeID_Description">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/List_NewOpeningDateRangeID_Description" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DateRange">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/New_Opening_Time_DateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DayTypeID">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/New_Opening_Time_DayTypeID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpening_dropDownSelection">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/List_NewOpening_dropDownSelection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Default_NewOpening_dropDownSelection">
+      <soap12:operation soapAction="http://soap.ukvoyager.info/List_Default_NewOpening_dropDownSelection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Car_ParkHttpGet" type="tns:Car_ParkHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="List_Car_Park">
+      <http:operation location="/List_Car_Park" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Car_Park_for_Icon">
+      <http:operation location="/List_Car_Park_for_Icon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park">
+      <http:operation location="/New_Car_Park" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park_Dynamic">
+      <http:operation location="/New_Car_Park_Dynamic" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_Park">
+      <http:operation location="/Edit_Car_Park" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Configuration">
+      <http:operation location="/New_Configuration" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DefinitionBySCN">
+      <http:operation location="/View_DefinitionBySCN" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition_Filter">
+      <http:operation location="/View_Definition_Filter" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Previous_DynamicBySCN">
+      <http:operation location="/View_Previous_DynamicBySCN" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition">
+      <http:operation location="/View_Definition" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="car_parksList_NearByObjects">
+      <http:operation location="/car_parksList_NearByObjects" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_ConfigurationBySCN">
+      <http:operation location="/View_ConfigurationBySCN" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN">
+      <http:operation location="/View_DynamicBySCN" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN_Archive">
+      <http:operation location="/View_DynamicBySCN_Archive" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicDetails">
+      <http:operation location="/View_DynamicDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords">
+      <http:operation location="/View_DynamicRecords" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords_Archive">
+      <http:operation location="/View_DynamicRecords_Archive" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_BySCN">
+      <http:operation location="/Delete_BySCN" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="New_OpeningTimesBySCNDayID">
+      <http:operation location="/New_OpeningTimesBySCNDayID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="New_TariffsBySCNDayID">
+      <http:operation location="/New_TariffsBySCNDayID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_OpeningTimesBySCNDayID">
+      <http:operation location="/Delete_OpeningTimesBySCNDayID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DateRange_DefinitionBySCN">
+      <http:operation location="/DateRange_DefinitionBySCN" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_DateRange">
+      <http:operation location="/List_DateRange" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_AllOpeningTimes_BySCN">
+      <http:operation location="/List_AllOpeningTimes_BySCN" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTimes_BySCN">
+      <http:operation location="/OpeningTimes_BySCN" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_OpeningTimesBySCN">
+      <http:operation location="/List_OpeningTimesBySCN" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_TariffsBySCN">
+      <http:operation location="/List_TariffsBySCN" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Car_Park_Status">
+      <http:operation location="/Get_Car_Park_Status" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_ParkStatus">
+      <http:operation location="/Edit_Car_ParkStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="View_OccupancyPercentage_Relaibility">
+      <http:operation location="/View_OccupancyPercentage_Relaibility" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Carpark_Status">
+      <http:operation location="/List_Carpark_Status" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTime_ByDayType">
+      <http:operation location="/OpeningTime_ByDayType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_DateRange">
+      <http:operation location="/Delete_DateRange" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Opening_Time_DateRange">
+      <http:operation location="/Update_Opening_Time_DateRange" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpeningDateRangeID_Description">
+      <http:operation location="/List_NewOpeningDateRangeID_Description" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DateRange">
+      <http:operation location="/New_Opening_Time_DateRange" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DayTypeID">
+      <http:operation location="/New_Opening_Time_DayTypeID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpening_dropDownSelection">
+      <http:operation location="/List_NewOpening_dropDownSelection" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Default_NewOpening_dropDownSelection">
+      <http:operation location="/List_Default_NewOpening_dropDownSelection" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Car_ParkHttpPost" type="tns:Car_ParkHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="List_Car_Park">
+      <http:operation location="/List_Car_Park" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Car_Park_for_Icon">
+      <http:operation location="/List_Car_Park_for_Icon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park">
+      <http:operation location="/New_Car_Park" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Car_Park_Dynamic">
+      <http:operation location="/New_Car_Park_Dynamic" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_Park">
+      <http:operation location="/Edit_Car_Park" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Configuration">
+      <http:operation location="/New_Configuration" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DefinitionBySCN">
+      <http:operation location="/View_DefinitionBySCN" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition_Filter">
+      <http:operation location="/View_Definition_Filter" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Previous_DynamicBySCN">
+      <http:operation location="/View_Previous_DynamicBySCN" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Definition">
+      <http:operation location="/View_Definition" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="car_parksList_NearByObjects">
+      <http:operation location="/car_parksList_NearByObjects" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_ConfigurationBySCN">
+      <http:operation location="/View_ConfigurationBySCN" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN">
+      <http:operation location="/View_DynamicBySCN" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicBySCN_Archive">
+      <http:operation location="/View_DynamicBySCN_Archive" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicDetails">
+      <http:operation location="/View_DynamicDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords">
+      <http:operation location="/View_DynamicRecords" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_DynamicRecords_Archive">
+      <http:operation location="/View_DynamicRecords_Archive" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_BySCN">
+      <http:operation location="/Delete_BySCN" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="New_OpeningTimesBySCNDayID">
+      <http:operation location="/New_OpeningTimesBySCNDayID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="New_TariffsBySCNDayID">
+      <http:operation location="/New_TariffsBySCNDayID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_OpeningTimesBySCNDayID">
+      <http:operation location="/Delete_OpeningTimesBySCNDayID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DateRange_DefinitionBySCN">
+      <http:operation location="/DateRange_DefinitionBySCN" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_DateRange">
+      <http:operation location="/List_DateRange" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_AllOpeningTimes_BySCN">
+      <http:operation location="/List_AllOpeningTimes_BySCN" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTimes_BySCN">
+      <http:operation location="/OpeningTimes_BySCN" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_OpeningTimesBySCN">
+      <http:operation location="/List_OpeningTimesBySCN" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_TariffsBySCN">
+      <http:operation location="/List_TariffsBySCN" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Car_Park_Status">
+      <http:operation location="/Get_Car_Park_Status" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit_Car_ParkStatus">
+      <http:operation location="/Edit_Car_ParkStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="View_OccupancyPercentage_Relaibility">
+      <http:operation location="/View_OccupancyPercentage_Relaibility" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Carpark_Status">
+      <http:operation location="/List_Carpark_Status" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpeningTime_ByDayType">
+      <http:operation location="/OpeningTime_ByDayType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_DateRange">
+      <http:operation location="/Delete_DateRange" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Opening_Time_DateRange">
+      <http:operation location="/Update_Opening_Time_DateRange" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpeningDateRangeID_Description">
+      <http:operation location="/List_NewOpeningDateRangeID_Description" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DateRange">
+      <http:operation location="/New_Opening_Time_DateRange" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="New_Opening_Time_DayTypeID">
+      <http:operation location="/New_Opening_Time_DayTypeID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="List_NewOpening_dropDownSelection">
+      <http:operation location="/List_NewOpening_dropDownSelection" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_Default_NewOpening_dropDownSelection">
+      <http:operation location="/List_Default_NewOpening_dropDownSelection" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Car_Park">
+    <wsdl:port name="Car_ParkSoap" binding="tns:Car_ParkSoap">
+      <soap:address location="http://192.168.0.113/WebService/car_park.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Car_ParkSoap12" binding="tns:Car_ParkSoap12">
+      <soap12:address location="http://192.168.0.113/WebService/car_park.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Car_ParkHttpGet" binding="tns:Car_ParkHttpGet">
+      <http:address location="http://192.168.0.113/WebService/car_park.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Car_ParkHttpPost" binding="tns:Car_ParkHttpPost">
+      <http:address location="http://192.168.0.113/WebService/car_park.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

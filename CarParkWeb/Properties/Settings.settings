@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CarParkWeb.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CarParkWeb_Support_support" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.0.113/WebService/support.asmx</Value>
+    </Setting>
+    <Setting Name="CarParkWeb_Car_park_Car_Park" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.0.113/WebService/car_park.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
