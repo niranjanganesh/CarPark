@@ -256,7 +256,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 30%">* Short Description(80 Chars)
+                                        <td style="width: 30%">* Description(80 Chars)
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtShortDescription" runat="server" MaxLength="80" Width="97%"></asp:TextBox>
