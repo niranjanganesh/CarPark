@@ -326,7 +326,7 @@
                             </fieldset>
                             <fieldset style="border: 1px solid #FF6600; width: 95%; display: inline;" id="fieldsetConfiguration"
                                 runat="server">
-                                <legend style="font-weight: bold; color: Red">Configuration</legend>
+                                <legend style="font-weight: bold; color: Red">Configurations</legend>
                                 <table>
                                     <tr>
                                         <td style="width: 30%">* Capacity
