@@ -329,7 +329,7 @@
                                 <legend style="font-weight: bold; color: Red">Configurations</legend>
                                 <table>
                                     <tr>
-                                        <td style="width: 30%">* Capacity
+                                        <td style="width: 30%">* Capacity Value
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtCapacity" runat="server" Width="97%" MaxLength="9"></asp:TextBox>
