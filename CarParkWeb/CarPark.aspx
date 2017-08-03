@@ -256,7 +256,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 30%">* Short Description(80 Chars)
+                                        <td style="width: 30%">* Description(80 Chars)
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtShortDescription" runat="server" MaxLength="80" Width="97%"></asp:TextBox>
@@ -326,10 +326,10 @@
                             </fieldset>
                             <fieldset style="border: 1px solid #FF6600; width: 95%; display: inline;" id="fieldsetConfiguration"
                                 runat="server">
-                                <legend style="font-weight: bold; color: Red">Configuration</legend>
+                                <legend style="font-weight: bold; color: Red">Configurations</legend>
                                 <table>
                                     <tr>
-                                        <td style="width: 30%">* Capacity
+                                        <td style="width: 30%">* Capacity Value
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtCapacity" runat="server" Width="97%" MaxLength="9"></asp:TextBox>
